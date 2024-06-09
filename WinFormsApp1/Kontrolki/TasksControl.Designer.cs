@@ -31,8 +31,14 @@
             lblTytul = new Label();
             lblZalogowanyText = new Label();
             lblZalogowany = new Label();
-            button1 = new Button();
+            btnDodaj = new Button();
             btnWyloguj = new Button();
+            btnEdytuj = new Button();
+            btnUsun = new Button();
+            lvZadania = new ListView();
+            colId = new ColumnHeader();
+            colTitle = new ColumnHeader();
+            colIsReady = new ColumnHeader();
             SuspendLayout();
             // 
             // lblTytul
@@ -65,14 +71,15 @@
             lblZalogowany.TabIndex = 2;
             lblZalogowany.Text = "Anonim";
             // 
-            // button1
+            // btnDodaj
             // 
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnDodaj.Font = new Font("Microsoft Sans Serif", 27F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDodaj.Location = new Point(588, 127);
+            btnDodaj.Name = "btnDodaj";
+            btnDodaj.Size = new Size(110, 323);
+            btnDodaj.TabIndex = 3;
+            btnDodaj.Text = "🞥";
+            btnDodaj.UseVisualStyleBackColor = true;
             // 
             // btnWyloguj
             // 
@@ -84,12 +91,61 @@
             btnWyloguj.Text = "⮜";
             btnWyloguj.UseVisualStyleBackColor = true;
             // 
+            // btnEdytuj
+            // 
+            btnEdytuj.Font = new Font("Microsoft Sans Serif", 27F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdytuj.Location = new Point(588, 459);
+            btnEdytuj.Name = "btnEdytuj";
+            btnEdytuj.Size = new Size(110, 323);
+            btnEdytuj.TabIndex = 5;
+            btnEdytuj.Text = "✏";
+            btnEdytuj.UseVisualStyleBackColor = true;
+            // 
+            // btnUsun
+            // 
+            btnUsun.Font = new Font("Microsoft Sans Serif", 27F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUsun.Location = new Point(588, 790);
+            btnUsun.Name = "btnUsun";
+            btnUsun.Size = new Size(110, 183);
+            btnUsun.TabIndex = 6;
+            btnUsun.Text = "🗑";
+            btnUsun.UseVisualStyleBackColor = true;
+            // 
+            // lvZadania
+            // 
+            lvZadania.Columns.AddRange(new ColumnHeader[] { colId, colTitle, colIsReady });
+            lvZadania.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            lvZadania.Location = new Point(24, 127);
+            lvZadania.Name = "lvZadania";
+            lvZadania.ShowGroups = false;
+            lvZadania.Size = new Size(545, 846);
+            lvZadania.TabIndex = 7;
+            lvZadania.UseCompatibleStateImageBehavior = false;
+            lvZadania.View = View.Details;
+            // 
+            // colId
+            // 
+            colId.Text = "Id";
+            colId.Width = 38;
+            // 
+            // colTitle
+            // 
+            colTitle.Text = "Tytuł";
+            colTitle.Width = 286;
+            // 
+            // colIsReady
+            // 
+            colIsReady.Text = "Zrobione";
+            // 
             // TasksControl
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lvZadania);
+            Controls.Add(btnUsun);
+            Controls.Add(btnEdytuj);
             Controls.Add(btnWyloguj);
-            Controls.Add(button1);
+            Controls.Add(btnDodaj);
             Controls.Add(lblZalogowany);
             Controls.Add(lblZalogowanyText);
             Controls.Add(lblTytul);
@@ -104,7 +160,13 @@
         private Label lblTytul;
         private Label lblZalogowanyText;
         private Label lblZalogowany;
-        private Button button1;
+        private Button btnDodaj;
         private Button btnWyloguj;
+        private Button btnEdytuj;
+        private Button btnUsun;
+        private ListView lvZadania;
+        private ColumnHeader colId;
+        private ColumnHeader colTitle;
+        private ColumnHeader colIsReady;
     }
 }
