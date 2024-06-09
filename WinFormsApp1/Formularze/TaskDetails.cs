@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ListaZadan.Klasy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,26 @@ namespace ListaZadan.Formularze
 {
     public partial class TaskDetails : Form
     {
-        public TaskDetails()
+        public TodoTask todoTask;
+        public bool IsSaved;
+
+        public TaskDetails(TodoTask task)
         {
             InitializeComponent();
+            todoTask = task;
+            lblNumer.Text = todoTask.Id.ToString();
+            tbTitle.Text = todoTask.Title;
+            tbDescription.Text = todoTask.Description;
+            cbIsReady.Checked = task.IsFinished;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            todoTask.Title = tbTitle.Text;
+            todoTask.Description = tbDescription.Text;
+            todoTask.IsFinished = cbIsReady.Checked;
+            IsSaved = true;
+            Close();
         }
     }
 }

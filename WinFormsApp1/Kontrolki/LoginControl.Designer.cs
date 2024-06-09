@@ -94,6 +94,7 @@
             tbHaslo.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             tbHaslo.Location = new Point(129, 196);
             tbHaslo.Name = "tbHaslo";
+            tbHaslo.PasswordChar = '*';
             tbHaslo.Size = new Size(225, 31);
             tbHaslo.TabIndex = 5;
             // 
@@ -119,6 +120,7 @@
             btnZaloguj.TabIndex = 7;
             btnZaloguj.Text = "Zaloguj";
             btnZaloguj.UseVisualStyleBackColor = true;
+            btnZaloguj.Click += btnZaloguj_Click;
             // 
             // btnZalozKonto
             // 
@@ -129,6 +131,7 @@
             btnZalozKonto.TabIndex = 8;
             btnZalozKonto.Text = "Załóż konto";
             btnZalozKonto.UseVisualStyleBackColor = true;
+            btnZalozKonto.Click += btnZalozKonto_Click;
             // 
             // LoginControl
             // 

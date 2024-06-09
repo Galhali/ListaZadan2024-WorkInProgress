@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ListaZadan.Klasy
 {
-    internal class FileHelper
+    public class FileHelper
     {
-        private static string basePath = $@"{AppDomain.CurrentDomain.BaseDirectory}/data/";
+        private static string basePath = $@"{Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent}/Data/";
 
         public static List<TodoTask> ZaladujZadania(string userId)
         {
@@ -23,9 +23,9 @@ namespace ListaZadan.Klasy
                 {
                     string[] columns = linia.Split('|');
                     int id = int.Parse(columns[0]);
-                    string title = columns[1];
-                    bool isFinished = bool.Parse(columns[2]);
-                    string description = columns[3];
+                    string title = columns[1];                    
+                    string description = columns[2];
+                    bool isFinished = bool.Parse(columns[3]);
                     TodoTask task = new TodoTask(
                         id,
                         userId,
@@ -49,8 +49,10 @@ namespace ListaZadan.Klasy
 
             foreach(TodoTask task in tasks)
             {
-                builder.AppendLine($"{task.Id}|{task.UserId}|{task.Title}|{task.Description}|{task.IsFinished}");
+                builder.AppendLine($"{task.Id}|{task.Title}|{task.Description}|{task.IsFinished}");
             }
+
+            File.WriteAllText(filePath, builder.ToString());
         }
     }
 }

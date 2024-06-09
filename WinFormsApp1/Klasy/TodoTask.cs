@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListaZadan.Klasy
 {
-    internal class TodoTask
+    public class TodoTask
     {
         public long Id;
         public string UserId;

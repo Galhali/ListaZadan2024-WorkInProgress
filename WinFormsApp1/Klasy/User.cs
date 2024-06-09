@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListaZadan.Klasy
 {
-    internal class User
+    public class User
     {
         public string Id;
         public string Imie;

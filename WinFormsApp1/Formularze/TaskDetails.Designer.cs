@@ -115,6 +115,7 @@
             btnSave.TabIndex = 7;
             btnSave.Text = "💾";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // TaskDetails
             // 
